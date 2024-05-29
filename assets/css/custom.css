@@ -15,3 +15,23 @@
   width: 80%; /* Adjust the width as needed */
   margin: 0 auto; /* Center the container horizontally */
 }
+
+body {
+  padding: 50px; /* Adjust the padding around the body content */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px; /* Adjust the margins for heading elements */
+}
+
+p, ul, ol, table, pre, dl {
+  margin: 0 0 20px; /* Adjust the margins for paragraph, list, table, code block, and definition list elements */
+}
+
+blockquote {
+  margin: 0; /* Adjust the margins for blockquote elements */
+}
+
+footer {
+  margin-top: 20px; /* Adjust the margin above the footer */
+}
