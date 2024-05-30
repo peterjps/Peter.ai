@@ -16,6 +16,12 @@
   margin: 0 auto; /* Center the container horizontally */
 }
 
+#about {
+  font-size: 24px; /* Change this to your desired font size */
+  font-weight: normal; /* Optional: change the font weight */
+  color: #333; /* Optional: change the color */
+}
+
 body {
   padding: 50px; /* Adjust the padding around the body content */
 }
