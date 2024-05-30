@@ -23,8 +23,11 @@
 }
 
 .social-icons {
-    width: 30px;  height: 30px;  margin-right: 10px; 
+    display: inline-block;
+    width: 200px;
 }
+/*     width: 30px;  height: 30px;  margin-right: 10px; 
+} */
 
 body {
   padding: 50px; /* Adjust the padding around the body content */
