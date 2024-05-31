@@ -19,8 +19,8 @@
   <body style='margin-left: 500px !important;'>
     
     <button id="theme-toggle" class="theme-toggle">
-      <img src="{{ '/assets/img/sun-icon.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
-      <img src="{{ '/assets/img/moon-icon.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
+      <img src="{{ '/assets/img/light_mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
+      <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
     </button>
     
     <div class="wrapper1">
@@ -95,17 +95,33 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
-      const toggleButton = document.getElementById('theme-toggle');
+     const toggleButton = document.getElementById('theme-toggle');
+      const lightIcon = document.getElementById('light-icon');
+      const darkIcon = document.getElementById('dark-icon');
+
       toggleButton.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        updateIcons(newTheme);
       });
 
-      // Save theme preference in local storage
+      function updateIcons(theme) {
+        if (theme === 'light') {
+          lightIcon.style.display = 'none';
+          darkIcon.style.display = 'inline';
+        } else {
+          lightIcon.style.display = 'inline';
+          darkIcon.style.display = 'none';
+        }
+      }
+
+      // Initialize theme based on saved preference
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
+      updateIcons(savedTheme);
+
     </script>
   </body>
 </html>
