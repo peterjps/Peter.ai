@@ -48,6 +48,19 @@ body {
   color: var(--text-color);
 }
 
+#theme-toggle {
+  position: fixed;
+  top: 25%; /* Positioned within the top 3/4 of the viewport */
+  right: 1rem;
+  z-index: 1000;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 body {
   padding: 50px; /* Adjust the padding around the body content */
