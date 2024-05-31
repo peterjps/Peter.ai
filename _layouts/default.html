@@ -19,9 +19,9 @@
   <body style='margin-left: 500px !important;'>
     
     <div class="wrapper1">
-      <header>
-        <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}">
-          {{ site.title | default: site.github.repository_name }} | colorize: theme === 'light' ? '#000' : '#3f4f6'
+      <header class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">
+        <h1>
+          {{ site.title | default: site.github.repository_name }}
         </h1>
 
         {% if site.logo %}
@@ -80,7 +80,7 @@
         right: auto !important;
         margin-right: 300px !important;" 
       
-      <section>
+      <section class="content-container">
         <h1 id="about" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">About</h1> 
         <p>Adaptable Project Manager transitioning into Software Engineering and Machine Learning. Proven leadership in optimizing processes and driving strategic initiatives. Eager to apply strong analytical skills and embrace continuous learning to excel in tech-driven environments.</p>
         <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
@@ -113,9 +113,14 @@
       const darkIcon3 = document.getElementById('dark-github');
       const lightIcon4 = document.getElementById('light-discord');
       const darkIcon4 = document.getElementById('dark-discord');
-      
+      const toggleButton = document.getElementById('theme-toggle');
+
       function updateIcons(theme) {
         if (theme === 'light') {
+          document.querySelectorAll('.light-theme').forEach(el => {
+          el.classList.remove('light-theme');
+          el.classList.add('dark-theme'); 
+          
           lightIcon.style.display = 'none';
           darkIcon.style.display = 'inline';
           // Show light mode icons, hide dark mode icons
@@ -137,6 +142,10 @@
           
           // ... repeat for all icons
         } else {
+          document.querySelectorAll('.dark-theme').forEach(el => {
+          el.classList.remove('dark-theme');
+          el.classList.add('light-theme');
+
           lightIcon.style.display = 'inline';
           darkIcon.style.display = 'none';
           // Show dark mode icons, hide light mode icons
