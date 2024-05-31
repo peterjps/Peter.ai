@@ -113,6 +113,8 @@
       
       function updateIcons(theme) {
         if (theme === 'light') {
+          lightIcon.style.display = 'none';
+          darkIcon.style.display = 'inline';
           // Show light mode icons, hide dark mode icons
           lightIcon1.style.display = 'inline';
           darkIcon1.style.display = 'none';
@@ -125,6 +127,8 @@
           
           // ... repeat for all icons
         } else {
+          lightIcon.style.display = 'inline';
+          darkIcon.style.display = 'none';
           // Show dark mode icons, hide light mode icons
           lightIcon1.style.display = 'none';
           darkIcon1.style.display = 'inline';
