@@ -78,7 +78,7 @@
         margin-right: 300px !important;" 
       
       <section>
-        <h1 id="about" style="font-size: 24px; font-weight: normal; color: #333;">About</h1>
+        <h1 id="about" style="font-size: 24px; font-weight: normal; color: {{ isDarkMode? #3f4f6 : '#333'}};">About</h1>
         <p>Adaptable Project Manager transitioning into Software Engineering and Machine Learning. Proven leadership in optimizing processes and driving strategic initiatives. Eager to apply strong analytical skills and embrace continuous learning to excel in tech-driven environments.</p>
         <h2 id="projects">Portfolio</h2>
         <p> • Mortage Repayment Calculator </p>
@@ -124,6 +124,13 @@
           darkIcon3.style.display = 'none';
           lightIcon4.style.display = 'inline';
           darkIcon4.style.display = 'none';
+
+          if (theme === 'light') {
+    // ... existing light mode icon logic
+    document.querySelectorAll('.light-text').forEach(element => {
+        element.style.color = '#000';  /* Replace with your desired color */
+    });
+}
           
           // ... repeat for all icons
         } else {
