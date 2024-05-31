@@ -18,6 +18,11 @@
   </head>
   <body style='margin-left: 500px !important;'>
     
+    <button id="theme-toggle" class="theme-toggle">
+      <img src="{{ '/assets/img/sun-icon.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
+      <img src="{{ '/assets/img/moon-icon.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
+    </button>
+    
     <div class="wrapper1">
       <header>
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
