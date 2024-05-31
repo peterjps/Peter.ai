@@ -29,6 +29,26 @@
 /*     width: 30px;  height: 30px;  margin-right: 10px; 
 } */
 
+/* styles.css */
+
+/* Default (Light Mode) */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --background-color: #191919;
+  --text-color: #f3f4f6;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
 body {
   padding: 50px; /* Adjust the padding around the body content */
 }
