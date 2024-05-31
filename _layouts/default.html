@@ -1,91 +1,183 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% seo %}
-  <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-  <!--[if lt IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <![endif]-->
-  {% include head-custom.html %}
-  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-</head>
-<body>
-  <div class="wrapper1">
-    <header class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">
-      <h1>{{ site.title | default: site.github.repository_name }}</h1>
-      {% if site.logo %}
-      <button id="theme-toggle" class="theme-toggle">
-        <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
-        <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
-      </button>
-      <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" />
-      {% endif %}
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/cspeterai/">
-          <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30">
-          <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="display: none;">
-        </a>
-        <a href="mailto:cspeteai@outlook.com">
-          <img id="light-email" src="assets/img/email-black.png" alt="Email me" width="30" height="30">
-          <img id="dark-email" src="assets/img/email-white.png" alt="Email me (dark mode)" width="30" height="30" style="display: none;">
-        </a>
-        <a href="https://github.com/peterjps">
-          <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30">
-          <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="display: none;">
-        </a>
-        <a href="https://discordapp.com/users/@01_peter_">
-          <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30">
-          <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="display: none;">
-        </a>
-      </div>
-    </header>
-    <section class="content-container">
-      <h1 id="about" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">About</h1>
-      <p>Adaptable Project Manager transitioning into Software Engineering and Machine Learning...</p>
-      <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
-      <p>• Mortgage Repayment Calculator</p>
-      <p>• Multi-AI Agent Collaboration for Financial Analysis</p>
-      <p>• Github Page</p>
-    </section>
-    <footer>
-      {% if site.github.is_project_page %}
-      <p>Copyright by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-      {% endif %}
-    </footer>
-  </div>
-  <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-  <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const lightIcon = document.getElementById('light-icon');
-    const darkIcon = document.getElementById('dark-icon');
-    const lightIcons = document.querySelectorAll('[id^="light-"]');
-    const darkIcons = document.querySelectorAll('[id^="dark-"]');
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    function updateIcons(theme) {
-      if (theme === 'light') {
-        lightIcons.forEach(icon => icon.style.display = 'inline');
-        darkIcons.forEach(icon => icon.style.display = 'none');
-      } else {
-        lightIcons.forEach(icon => icon.style.display = 'none');
-        darkIcons.forEach(icon => icon.style.display = 'inline');
-      }
-    }
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    {% include head-custom.html %}
+    
+<!--     {%- include head.html -%}
+     -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  </head>
+  <body style='margin-left: 500px !important;'>
+    
+    <div class="wrapper1">
+      <header>
+        <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}">
+          {{ site.title | default: site.github.repository_name }} | colorize: theme === 'light' ? '#000' : '#3f4f6'
+        </h1>
 
-    toggleButton.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateIcons(newTheme);
+        {% if site.logo %}
+        <button id="theme-toggle" class="theme-toggle" style="margin-left: 500px !important; margin-right: 485px !important; margin-bottom: 0px !important; top: 52px !important; left: 275px !important;">
+          <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
+          <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
+        </button>
+        <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !imoprtant; margin-bottom: 8px !important;" />
+        {% endif %}
+<!--         <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p> -->
+
+<!--         <p>{{ site.description | default: site.github.project_tagline }}</p>
+ -->    
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/cspeterai/">
+          <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+          <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+
+          </a>
+  
+          <a href="mailto:cspeteai@outlook.com">
+          <img id="light-email" src="assets/img/email-black.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px !important;">
+          <img id="dark-email" src="assets/img/email-white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important;">
+          </a>
+  
+          <a href="https://github.com/peterjps">
+          <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px !important;">
+          <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important; display: none;">
+          </a>
+  
+          <a href="https://discordapp.com/users/@01_peter_">
+          <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0px !important;">
+          <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
+          </a>
+          <div>
+<!--         {% if site.github.is_project_page %}
+        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
+        {% endif %}
+ -->
+<!--         {% if site.github.is_user_page %}
+        <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
+        {% endif %} -->
+
+        {% if site.show_downloads %}
+        <ul class="downloads">
+          <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
+          <li><a href="{{ site.github.tar_url }}">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
+        </ul>
+        {% endif %}
+      </header>
+      <section style="bottom: auto !important;
+        margin-bottom: auto !important;
+        margin-top: 270px !important;
+        right: auto !important;
+        margin-right: 300px !important;" 
+      
+      <section>
+        <h1 id="about" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">About</h1> 
+        <p>Adaptable Project Manager transitioning into Software Engineering and Machine Learning. Proven leadership in optimizing processes and driving strategic initiatives. Eager to apply strong analytical skills and embrace continuous learning to excel in tech-driven environments.</p>
+        <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
+        <p> • Mortage Repayment Calculator </p>
+        <p> • Multi-AI Agent Collaboration for Financial Analysis</p>
+        <p> • Github Page </p>
+      </section>
+    
+
+      </section>
+
+
+
+      <footer>
+        {% if site.github.is_project_page %}
+        <p>Copyright by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
+      </footer>
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      const toggleButton = document.getElementById('theme-toggle');
+      const lightIcon = document.getElementById('light-icon');
+      const darkIcon = document.getElementById('dark-icon');
+      const lightIcon1 = document.getElementById('light-linkedin');
+      const darkIcon1 = document.getElementById('dark-linkedin');
+      const lightIcon2 = document.getElementById('light-email');
+      const darkIcon2 = document.getElementById('dark-email');
+      const lightIcon3 = document.getElementById('light-github');
+      const darkIcon3 = document.getElementById('dark-github');
+      const lightIcon4 = document.getElementById('light-discord');
+      const darkIcon4 = document.getElementById('dark-discord');
+      
+      function updateIcons(theme) {
+        if (theme === 'light') {
+          lightIcon.style.display = 'none';
+          darkIcon.style.display = 'inline';
+          // Show light mode icons, hide dark mode icons
+          lightIcon1.style.display = 'inline';
+          darkIcon1.style.display = 'none';
+          lightIcon2.style.display = 'inline';
+          darkIcon2.style.display = 'none';
+          lightIcon3.style.display = 'inline';
+          darkIcon3.style.display = 'none';
+          lightIcon4.style.display = 'inline';
+          darkIcon4.style.display = 'none';
+
+          if (theme === 'light') {
+    // ... existing light mode icon logic
+    document.querySelectorAll('.light-text').forEach(element => {
+        element.style.color = '#000';  /* Replace with your desired color */
     });
+}
+          
+          // ... repeat for all icons
+        } else {
+          lightIcon.style.display = 'inline';
+          darkIcon.style.display = 'none';
+          // Show dark mode icons, hide light mode icons
+          lightIcon1.style.display = 'none';
+          darkIcon1.style.display = 'inline';
+          lightIcon2.style.display = 'none';
+          darkIcon2.style.display = 'inline';
+          lightIcon3.style.display = 'none';
+          darkIcon3.style.display = 'inline';
+          lightIcon4.style.display = 'none';
+          darkIcon4.style.display = 'inline';
+          
+          // ... repeat for all icons
+        }
+      }
 
-    // Initialize theme based on saved preference
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateIcons(savedTheme);
-  </script>
-</body>
+
+      toggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcons(newTheme);
+      });
+
+      // function updateIcons(theme) {
+      //   if (theme === 'light') {
+      //     lightIcon.style.display = 'none';
+      //     darkIcon.style.display = 'inline';
+      //   } else {
+      //     lightIcon.style.display = 'inline';
+      //     darkIcon.style.display = 'none';
+      //   }
+      // }
+
+      // Initialize theme based on saved preference
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateIcons(savedTheme);
+
+    </script>
+  </body>
 </html>
+
