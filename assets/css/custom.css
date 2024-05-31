@@ -75,7 +75,7 @@ body {
 }
 
 .light-theme {
-  color: #333; /* Your desired color for light theme */
+  color: var(--text-color); /* Your desired color for light theme */
 }
 
 .dark-theme {
