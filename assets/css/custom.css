@@ -75,8 +75,12 @@ body {
     align-items: center;  /* Aligns elements vertically (already present) */
 }
 
-.light-text {
-    color: #f3f4f6;  /* Replace with your desired text color for light mode */
+.light-theme {
+  color: #333; /* Your desired color for light theme */
+}
+
+.dark-theme {
+  color: #3f4f6; /* Your desired color for dark theme */
 }
 
 body {
