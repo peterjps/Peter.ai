@@ -35,20 +35,24 @@
  -->    
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/cspeterai/">
-          <img src="assets/img/1218170_linkedin_icon.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+          <img id="light-linkedin" src="assets/img/linked-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+          <img id="dark-linkedin" src="assets/img/linked-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+
           </a>
   
           <a href="mailto:cspeteai@outlook.com">
-          <img src="assets/img/email.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px !important;">
+          <img id="light-email" src="assets/img/email-black.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px !important;">
+          <img id="dark-email" src="assets/img/email-white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important;">
           </a>
   
           <a href="https://github.com/peterjps">
-          <img src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px !important;">
+          <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px !important;">
           <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important; display: none;">
           </a>
   
           <a href="https://discordapp.com/users/@01_peter_">
-          <img src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0px !important;">
+          <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0px !important;">
+          <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
           </a>
           <div>
 <!--         {% if site.github.is_project_page %}
@@ -98,6 +102,43 @@
       const toggleButton = document.getElementById('theme-toggle');
       const lightIcon = document.getElementById('light-icon');
       const darkIcon = document.getElementById('dark-icon');
+      const lightIcon1 = document.getElementById('light-linkedin');
+      const darkIcon1 = document.getElementById('dark-linkedin');
+      const lightIcon2 = document.getElementById('light-email');
+      const darkIcon2 = document.getElementById('dark-email');
+      const lightIcon3 = document.getElementById('light-github');
+      const darkIcon3 = document.getElementById('dark-github');
+      const lightIcon4 = document.getElementById('light-discord');
+      const darkIcon4 = document.getElementById('dark-discord');
+      
+      function updateIcons(theme) {
+        if (theme === 'light') {
+          // Show light mode icons, hide dark mode icons
+          lightIcon1.style.display = 'inline';
+          darkIcon1.style.display = 'none';
+          lightIcon2.style.display = 'inline';
+          darkIcon2.style.display = 'none';
+          lightIcon3.style.display = 'inline';
+          darkIcon3.style.display = 'none';
+          lightIcon4.style.display = 'inline';
+          darkIcon4.style.display = 'none';
+          
+          // ... repeat for all icons
+        } else {
+          // Show dark mode icons, hide light mode icons
+          lightIcon1.style.display = 'none';
+          darkIcon1.style.display = 'inline';
+          lightIcon2.style.display = 'none';
+          darkIcon2.style.display = 'inline';
+          lightIcon3.style.display = 'none';
+          darkIcon3.style.display = 'inline';
+          lightIcon4.style.display = 'none';
+          darkIcon4.style.display = 'inline';
+          
+          // ... repeat for all icons
+        }
+      }
+
 
       toggleButton.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -107,15 +148,15 @@
         updateIcons(newTheme);
       });
 
-      function updateIcons(theme) {
-        if (theme === 'light') {
-          lightIcon.style.display = 'none';
-          darkIcon.style.display = 'inline';
-        } else {
-          lightIcon.style.display = 'inline';
-          darkIcon.style.display = 'none';
-        }
-      }
+      // function updateIcons(theme) {
+      //   if (theme === 'light') {
+      //     lightIcon.style.display = 'none';
+      //     darkIcon.style.display = 'inline';
+      //   } else {
+      //     lightIcon.style.display = 'inline';
+      //     darkIcon.style.display = 'none';
+      //   }
+      // }
 
       // Initialize theme based on saved preference
       const savedTheme = localStorage.getItem('theme') || 'light';
