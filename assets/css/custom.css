@@ -70,9 +70,9 @@ body {
 }
 
 .header {
-    display: flex;  /* Enables Flexbox layout */
-    align-items: center;  /* Aligns elements vertically */
-    width: 50%;
+    display: flex;
+    justify-content: center;  /* Centers elements horizontally */
+    align-items: center;  /* Aligns elements vertically (already present) */
 }
 
 body {
