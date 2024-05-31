@@ -18,15 +18,14 @@
   </head>
   <body style='margin-left: 500px !important;'>
     
-    <button id="theme-toggle" class="theme-toggle">
-      <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
-      <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
-    </button>
-    
     <div class="wrapper1">
       <header>
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         {% if site.logo %}
+        <button id="theme-toggle" class="theme-toggle">
+          <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
+          <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
+        </button>
         <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !imoprtant; margin-bottom: 8px !important;" />
         {% endif %}
 <!--         <h1>{{ site.title }}</h1>
