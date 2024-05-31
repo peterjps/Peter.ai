@@ -113,6 +113,8 @@
       const darkIcon3 = document.getElementById('dark-github');
       const lightIcon4 = document.getElementById('light-discord');
       const darkIcon4 = document.getElementById('dark-discord');
+      const headings = document.querySelectorAll('h1, h2'); // Select all h1 and h2 elements
+
       
       function updateIcons(theme) {
         if (theme === 'light') {
@@ -127,6 +129,7 @@
           darkIcon3.style.display = 'none';
           lightIcon4.style.display = 'inline';
           darkIcon4.style.display = 'none';
+          headings.forEach(heading => heading.style.color = '#000');
 
           if (theme === 'light') {
     // ... existing light mode icon logic
@@ -148,6 +151,7 @@
           darkIcon3.style.display = 'inline';
           lightIcon4.style.display = 'none';
           darkIcon4.style.display = 'inline';
+          headings.forEach(heading => heading.style.color = '#f3f4f6');
           
           // ... repeat for all icons
         }
