@@ -20,7 +20,7 @@
     
     <div class="wrapper1">
       <header>
-        <h1> </span> {{ site.title | default: site.github.repository_name }} </span> | colorize: data-theme === 'light' ? '#000' : '#3f4f6' </h1>
+        <h1> </span> {{ site.title | default: site.github.repository_name }} </span> | colorize: theme === 'light' ? '#000' : '#3f4f6' </h1>
         {% if site.logo %}
         <button id="theme-toggle" class="theme-toggle" style="margin-left: 500px !important; margin-right: 485px !important; margin-bottom: 0px !important; top: 52px !important; left: 275px !important;">
           <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
