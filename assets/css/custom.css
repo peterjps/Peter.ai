@@ -50,23 +50,24 @@ body {
 
 #theme-toggle {
   position: fixed;
-  top: 25%; /* Positioned within the top 3/4 of the viewport */
+  top: 25%; /* Adjust vertical position as needed */
   right: 1rem;
   z-index: 1000;
-  padding: 0.5rem;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  padding: 0.25rem; /* Adjust padding to make button smaller */
+  background-color: transparent; /* Make background transparent */
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #theme-toggle img {
-  width: 24px;  /* Adjust this value to make the icons smaller or larger */
-  height: 24px; /* Adjust this value to make the icons smaller or larger */
+  width: 24px; /* Adjust icon size */
+  height: 24px;
 }
 
+/* Optional: Add hover effect to indicate interaction */
+#theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Example background color on hover */
+}
 body {
   padding: 50px; /* Adjust the padding around the body content */
 }
