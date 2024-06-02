@@ -71,9 +71,16 @@ body {
 
 .header {
     display: flex;
-    justify-content: center;  /* Centers elements horizontally */
+/*   Center */
+    justify-content: space-between;  /* Centers elements horizontally */ 
     align-items: center;  /* Aligns elements vertically (already present) */
 }
+
+.theme-toggle {
+    margin-left: auto; /* Push the toggle button to the right */
+    margin-right: 20px; /* Add some spacing from the right */
+}
+
 
 .light-theme {
   color: #00000; /* Your desired color for light theme */
