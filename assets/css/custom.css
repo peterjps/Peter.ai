@@ -89,39 +89,28 @@ body {
 }
 
 /* Default light mode colors */
-
 :root {
     --link-color: black; /* Default link color for light mode */
     --link-hover-color: darkgray; /* Default hover color for light mode */
 }
 
-
 /* Dark mode colors using prefers-color-scheme media query */
-:root {
-    --link-color-light: black;
-    --link-color-dark: lightgray;
-    --link-hover-light: red;
-    --link-hover-dark: white;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --link-color: lightgray; /* Link color for dark mode */
+        --link-hover-color: white; /* Hover color for dark mode */
+    }
 }
 
-/* Default styles for light mode */
-a {
-    color: var(--link-color-light);
+.custom-link {
+    color: var(--link-color); /* Use CSS variable for link color */
     text-decoration: none;
 }
-a:hover {
-    color: var(--link-hover-light);
+
+.custom-link:hover {
+    color: var(--link-hover-color); /* Use CSS variable for hover color */
 }
 
-/* Styles for dark mode */
-@media (prefers-color-scheme: dark) {
-    a {
-        color: var(--link-color-dark);
-    }
-    a:hover {
-        color: var(--link-hover-dark);
-    }
-}
 
 
 body {
