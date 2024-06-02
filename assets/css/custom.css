@@ -89,17 +89,14 @@ body {
 }
 
 /* Default light mode colors */
+@media (prefers-color-scheme: light) {
+
 :root {
     --link-color: black; /* Default link color for light mode */
     --link-hover-color: darkgray; /* Default hover color for light mode */
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --link-color: blue; /* Link color for light mode */
-        --link-hover-color: lightblue; /* Hover color for light mode */
-    }
-}
+
 /* Dark mode colors using prefers-color-scheme media query */
 @media (prefers-color-scheme: dark) {
     :root {
