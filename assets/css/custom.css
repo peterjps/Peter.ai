@@ -120,6 +120,9 @@ body {
     color: var(--link-hover-color); /* Use CSS variable for hover color */
 }
 
+.underscore::before {
+    content: '_ ';
+}
 
 
 body {
