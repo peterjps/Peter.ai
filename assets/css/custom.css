@@ -86,7 +86,7 @@ body {
 /* Default light mode colors */
 :root {
     --link-color: black; /* Default link color for light mode */
-    --link-hover-color: darkgray; /* Default hover color for light mode */
+    --link-hover-color: black; /* Default hover color for light mode */
 }
 
 /* Dark mode colors using prefers-color-scheme media query */
