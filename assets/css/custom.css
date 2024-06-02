@@ -89,7 +89,6 @@ body {
 }
 
 /* Default light mode colors */
-@media (light-theme) {
 
 :root {
     --link-color: black; /* Default link color for light mode */
