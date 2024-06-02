@@ -102,6 +102,14 @@ body {
     }
 }
 
+/* Light mode colors using custom media query */
+@media (light-theme) {
+    :root {
+        --link-color: black; /* Link color for light mode */
+        --link-hover-color: darkgray; /* Hover color for light mode */
+    }
+}
+
 .custom-link {
     color: var(--link-color); /* Use CSS variable for link color */
     text-decoration: none;
