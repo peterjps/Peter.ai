@@ -83,6 +83,30 @@ body {
   color: #3f4f6; /* Your desired color for dark theme */
 }
 
+/* Default light mode colors */
+:root {
+    --link-color: black; /* Default link color for light mode */
+    --link-hover-color: darkgray; /* Default hover color for light mode */
+}
+
+/* Dark mode colors using prefers-color-scheme media query */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --link-color: lightgray; /* Link color for dark mode */
+        --link-hover-color: white; /* Hover color for dark mode */
+    }
+}
+
+.custom-link {
+    color: var(--link-color); /* Use CSS variable for link color */
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: var(--link-hover-color); /* Use CSS variable for hover color */
+}
+
+
 body {
   padding: 50px; /* Adjust the padding around the body content */
 }
