@@ -99,9 +99,9 @@ body {
 /* Dark mode colors using prefers-color-scheme media query */
 :root {
     --link-color-light: black;
-    --link-color-dark: white;
+    --link-color-dark: lightgray;
     --link-hover-light: red;
-    --link-hover-dark: yellow;
+    --link-hover-dark: white;
 }
 
 /* Default styles for light mode */
