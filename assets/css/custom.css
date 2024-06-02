@@ -72,13 +72,8 @@ body {
 .header {
     display: flex;
 /*   Center */
-    justify-content: space-between;  /* Centers elements horizontally */ 
+    justify-content: center;  /* Centers elements horizontally */ 
     align-items: center;  /* Aligns elements vertically (already present) */
-}
-
-.theme-toggle {
-    margin-left: auto; /* Push the toggle button to the right */
-    margin-right: 20px; /* Add some spacing from the right */
 }
 
 
