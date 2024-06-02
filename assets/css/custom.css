@@ -76,8 +76,13 @@ body {
 }
 
 .light-theme {
-  color: var(--text-color); /* Your desired color for light theme */
+  color: #00000; /* Your desired color for light theme */
 }
+
+.light-theme .custom-link:hover {
+    color: lightgray; /* Link color on hover */
+}
+
 
 .dark-theme {
   color: #3f4f6; /* Your desired color for dark theme */
