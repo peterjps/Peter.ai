@@ -16,25 +16,12 @@
      -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            min-height: 100vh; /* Ensure full viewport height */
-        }
-        .wrapper1 {
-            max-width: 600px; /* Adjust max-width as needed */
-            text-align: center; /* Center content */
-            padding: 20px; /* Add padding */
-        }
         .custom-link {
             text-decoration: underline;
         }
     </style>
   </head>
-  <body  style='margin-left: 500px !important;'>
+  <body style='margin-left: 500px !important;'>
     
     <div class="wrapper1">
       <header>
@@ -46,9 +33,9 @@
         <button id="theme-toggle" class="theme-toggle" style="margin-left: 500px !important; margin-right: 485px !important; margin-bottom: 0px !important; top: 52px !important; left: 275px !important;">
           <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
           <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
-        </button>  {% endif %}
-        <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !important; margin-bottom: 8px !important;"/>
-      
+        </button>
+        <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !important; margin-bottom: 8px !important;" />
+        {% endif %}
 <!--         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p> -->
 
@@ -76,8 +63,6 @@
           <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
           </a>
           <div>
-          
-
 <!--         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
         {% endif %}
@@ -111,10 +96,7 @@
     
 
       </section>
-
-
-
-
+            
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
@@ -212,37 +194,10 @@
         const initialTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', initialTheme);
         updateIcons(initialTheme);
-      
-
-
-      // toggleButton.addEventListener('click', () => {
-      //   const currentTheme = document.documentElement.getAttribute('data-theme');
-      //   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      //   document.documentElement.setAttribute('data-theme', newTheme);
-      //   localStorage.setItem('theme', newTheme);
-      //   updateIcons(newTheme);
-      // });
-
-      // // function updateIcons(theme) {
-      // //   if (theme === 'light') {
-      // //     lightIcon.style.display = 'none';
-      // //     darkIcon.style.display = 'inline';
-      // //   } else {
-      // //     lightIcon.style.display = 'inline';
-      // //     darkIcon.style.display = 'none';
-      // //   }
-      // // }
-
-      // // Initialize theme based on saved preference
-      // const savedTheme = localStorage.getItem('theme') || 'light';
-      // document.documentElement.setAttribute('data-theme', savedTheme);
-      // updateIcons(savedTheme);
+            
       <footer>
 // <!--         {% if site.github.is_project_page %}
 //         <p>Copyright by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
 //         {% endif %} -->
-      <footer>
-    </script>
-  </body>
-</html>
+      </footer>
 
