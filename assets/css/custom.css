@@ -71,7 +71,6 @@ body {
 
 .header {
     display: flex;
-/*   Center */
     justify-content: center;  /* Centers elements horizontally */ 
     align-items: center;  /* Aligns elements vertically (already present) */
 }
