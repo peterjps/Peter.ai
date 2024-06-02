@@ -43,12 +43,11 @@
         </h1>
 
         {% if site.logo %}
-        <button id="theme-toggle" class="theme-toggle" style="margin-left: 500px !important; margin-right: 485px !important; margin-bottom: 0px !important; top: 52px !important; left: 275px !important;">
+        <button id="theme-toggle" class="theme-toggle">
           <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
           <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
         </button>
-        <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !important; margin-bottom: 8px !important;" />
-        {% endif %}
+        <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" />
 <!--         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p> -->
 
@@ -76,6 +75,8 @@
           <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
           </a>
           <div>
+          {% endif %}
+
 <!--         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
         {% endif %}
