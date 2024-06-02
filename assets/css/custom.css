@@ -89,7 +89,7 @@ body {
 }
 
 /* Default light mode colors */
-@media (data-theme: light) {
+/* Default light mode colors */
 :root {
     --link-color: black; /* Default link color for light mode */
     --link-hover-color: darkgray; /* Default hover color for light mode */
@@ -102,8 +102,14 @@ body {
         --link-hover-color: white; /* Hover color for dark mode */
     }
 }
-/* 
-Light mode colors using custom media query */
+
+/* Light mode colors using custom media query */
+@media (light-theme) {
+    :root {
+        --link-color: black; /* Link color for light mode */
+        --link-hover-color: darkgray; /* Hover color for light mode */
+    }
+}
 
 .custom-link {
     color: var(--link-color); /* Use CSS variable for link color */
