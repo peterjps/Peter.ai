@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,13 +44,13 @@
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/cspeterai/">
           <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
-          <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+          <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important; display:none;">
 
           </a>
   
           <a href="mailto:cspeteai@outlook.com">
           <img id="light-email" src="assets/img/email_dark.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px !important;">
-          <img id="dark-email" src="assets/img/email_white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important;">
+          <img id="dark-email" src="assets/img/email_white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; display:none;">
           </a>
   
           <a href="https://github.com/peterjps">
@@ -60,7 +60,7 @@
   
           <a href="https://discordapp.com/users/@01_peter_">
           <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0px !important;">
-          <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
+          <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;display:none;">
           </a>
           <div>
 <!--         {% if site.github.is_project_page %}
@@ -85,7 +85,7 @@
         right: auto !important;
         margin-right: 300px !important;" 
       
-      <section>
+      </section>
         <h1 id="about" class="{% if theme == 'light' %}light-theme{% else %}dark-theme{% endif %}">About</h1>
         <p>Hey there, I'm an adaptable project manager who's diving headfirst into the world of software engineering and machine learning. I've got a knack for optimizing processes and leading strategic initiatives, and I'm excited to bring my strong analytical skills to tech-driven environments. I'm all about continuous learning and can't wait to see where this journey takes me.</p>
         <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
@@ -108,16 +108,27 @@
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
       const toggleButton = document.getElementById('theme-toggle');
-      const lightIcon = document.getElementById('light-icon');
-      const darkIcon = document.getElementById('dark-icon');
-      const lightIcon1 = document.getElementById('light-linkedin');
-      const darkIcon1 = document.getElementById('dark-linkedin');
-      const lightIcon2 = document.getElementById('light-email');
-      const darkIcon2 = document.getElementById('dark-email');
-      const lightIcon3 = document.getElementById('light-github');
-      const darkIcon3 = document.getElementById('dark-github');
-      const lightIcon4 = document.getElementById('light-discord');
-      const darkIcon4 = document.getElementById('dark-discord');
+      const lightIcons = [
+          document.getElementById('light-icon');
+          document.getElementById('light-linkedin');
+          document.getElementById('light-github');
+          document.getElementById('light-discord');
+        ];
+      const darkIcons = [
+          document.getElementById('dark-icon');
+          document.getElementById('dark-linkedin');
+          document.getElementById('dark-email');
+          document.getElementById('dark-github');
+          document.getElementById('dark-discord');
+        ];
+      // const lightIcon1 = document.getElementById('light-linkedin');
+      // const darkIcon1 = document.getElementById('dark-linkedin');
+      // const lightIcon2 = document.getElementById('light-email');
+      // const darkIcon2 = document.getElementById('dark-email');
+      // const lightIcon3 = document.getElementById('light-github');
+      // const darkIcon3 = document.getElementById('dark-github');
+      // const lightIcon4 = document.getElementById('light-discord');
+      // const darkIcon4 = document.getElementById('dark-discord');
       const headings = document.querySelectorAll('h1, h2'); // Select all h1 and h2 elements
       const links = document.querySelectorAll('.custom-link'); // Select all links with the custom-link class
 
@@ -125,17 +136,17 @@
       
       function updateIcons(theme) {
         if (theme === 'light') {
-          lightIcon.style.display = 'none';
-          darkIcon.style.display = 'inline';
+          lightIcons.style.display = 'none';
+          darkIcons.style.display = 'inline';
           // Show light mode icons, hide dark mode icons
-          lightIcon1.style.display = 'inline';
-          darkIcon1.style.display = 'none';
-          lightIcon2.style.display = 'inline';
-          darkIcon2.style.display = 'none';
-          lightIcon3.style.display = 'inline';
-          darkIcon3.style.display = 'none';
-          lightIcon4.style.display = 'inline';
-          darkIcon4.style.display = 'none';
+          // lightIcon1.style.display = 'inline';
+          // darkIcon1.style.display = 'none';
+          // lightIcon2.style.display = 'inline';
+          // darkIcon2.style.display = 'none';
+          // lightIcon3.style.display = 'inline';
+          // darkIcon3.style.display = 'none';
+          // lightIcon4.style.display = 'inline';
+          // darkIcon4.style.display = 'none';
           headings.forEach(heading => heading.style.color = '#000');
           links.forEach(link => {
                 link.style.color = 'black'; // Link color for light mode
@@ -157,17 +168,17 @@
           
           // ... repeat for all icons
         } else {
-          lightIcon.style.display = 'inline';
-          darkIcon.style.display = 'none';
+          lightIcons.style.display = 'inline';
+          darkIcons.style.display = 'none';
           // Show dark mode icons, hide light mode icons
-          lightIcon1.style.display = 'none';
-          darkIcon1.style.display = 'inline';
-          lightIcon2.style.display = 'none';
-          darkIcon2.style.display = 'inline';
-          lightIcon3.style.display = 'none';
-          darkIcon3.style.display = 'inline';
-          lightIcon4.style.display = 'none';
-          darkIcon4.style.display = 'inline';
+          // lightIcon1.style.display = 'none';
+          // darkIcon1.style.display = 'inline';
+          // lightIcon2.style.display = 'none';
+          // darkIcon2.style.display = 'inline';
+          // lightIcon3.style.display = 'none';
+          // darkIcon3.style.display = 'inline';
+          // lightIcon4.style.display = 'none';
+          // darkIcon4.style.display = 'inline';
           headings.forEach(heading => heading.style.color = '#f3f4f6');
           
           links.forEach(link => {
