@@ -40,24 +40,6 @@ body {
   background-color: rgba(0, 0, 0, 0.1); /* Example background color on hover */
 }
 
-/* CSS for light icon */
-#light-icon {
-  /* Your styles for the light mode icon */
-  width: 24px;
-  height: 24px;
-  position: fixed; /* Ensures the icon stays fixed within the button */
-  /* Add more styles as needed */
-}
-
-/* CSS for dark icon */
-#dark-icon {
-  /* Your styles for the dark mode icon */
-  width: 24px;
-  height: 24px;
-  position: fixed; /* Ensures the icon stays fixed within the button */
-  /* Add more styles as needed */
-}
-
 
 .header {
   display: flex;
