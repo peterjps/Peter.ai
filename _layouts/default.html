@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}" data-theme="light">
+<html lang="{{ site.lang | default: 'en-US' }}" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -175,6 +175,7 @@
             const currentTheme = getCurrentTheme();
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', newTheme);
+            document.body.className = newTheme === 'light' ? 'light-theme' : 'dark-theme';
             updateIcons(newTheme);
         }
 
@@ -183,7 +184,11 @@
         // Set initial theme based on prefers-color-scheme
         const initialTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', initialTheme);
+        document.body.className = initialTheme === 'light' ? 'light-theme' : 'dark-theme';
         updateIcons(initialTheme);
+    </script>
+</body>
+</html>
 
 
 
