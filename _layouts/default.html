@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% seo %}
+    {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -16,53 +16,66 @@
      -->
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure full viewport height */
+        }
+        .wrapper1 {
+            max-width: 600px; /* Adjust max-width as needed */
+            text-align: center; /* Center content */
+            padding: 20px; /* Add padding */
+        }
         .custom-link {
             text-decoration: underline;
         }
     </style>
-  </head>
-  <body style='margin-left: 500px !important;'>
+</head>
+<body style='margin-left: 500px !important;'>
     
     <div class="wrapper1">
-      <header>
-        <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}">
-          {{ site.title | default: site.github.repository_name }}
-        </h1>
+        <header>
+            <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}">
+              {{ site.title | default: site.github.repository_name }}
+            </h1>
 
-        {% if site.logo %}
-        <button id="theme-toggle" class="theme-toggle" style="margin-left: 500px !important; margin-right: 485px !important; margin-bottom: 0px !important; top: 52px !important; left: 275px !important;">
-          <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
-          <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
-        </button>
-        <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !important; margin-bottom: 8px !important;" />
-        {% endif %}
+            {% if site.logo %}
+            <button id="theme-toggle" class="theme-toggle" style="margin-left: 500px !important; margin-right: 485px !important; margin-bottom: 0px !important; top: 52px !important; left: 275px !important;">
+              <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
+              <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
+            </button>
+            <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !important; margin-bottom: 8px !important;" />
+            {% endif %}
 <!--         <h1>{{ site.title }}</h1>
         <p>{{ site.description }}</p> -->
 
 <!--         <p>{{ site.description | default: site.github.project_tagline }}</p>
  -->    
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/cspeterai/">
-          <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
-          <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
-
-          </a>
-  
-          <a href="mailto:cspeteai@outlook.com">
-          <img id="light-email" src="assets/img/email_dark.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px !important;">
-          <img id="dark-email" src="assets/img/email_white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important;">
-          </a>
-  
-          <a href="https://github.com/peterjps">
-          <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px !important;">
-          <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important; display: none;">
-          </a>
-  
-          <a href="https://discordapp.com/users/@01_peter_">
-          <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0px !important;">
-          <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
-          </a>
-          <div>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/cspeterai/">
+              <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+              <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
+    
+              </a>
+      
+              <a href="mailto:cspeteai@outlook.com">
+              <img id="light-email" src="assets/img/email_dark.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px !important;">
+              <img id="dark-email" src="assets/img/email_white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important;">
+              </a>
+      
+              <a href="https://github.com/peterjps">
+              <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px !important;">
+              <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important; display: none;">
+              </a>
+      
+              <a href="https://discordapp.com/users/@01_peter_">
+              <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0px !important;">
+              <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0px !important;">
+              </a>
+            <div>
 <!--         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
         {% endif %}
@@ -78,21 +91,21 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %} -->
-      </header>
-      <section style="bottom: auto !important;
-        margin-bottom: auto !important;
-        margin-top: 270px !important;
-        right: auto !important;
-        margin-right: 300px !important;" 
+        </header>
+        <section style="bottom: auto !important;
+          margin-bottom: auto !important;
+          margin-top: 270px !important;
+          right: auto !important;
+          margin-right: 300px !important;" 
       
-      <section>
-        <h1 id="about" class="{% if theme == 'light' %}light-theme{% else %}dark-theme{% endif %}">About</h1>
-        <p>Hey there, I'm an adaptable project manager who's diving headfirst into the world of software engineering and machine learning. I've got a knack for optimizing processes and leading strategic initiatives, and I'm excited to bring my strong analytical skills to tech-driven environments. I'm all about continuous learning and can't wait to see where this journey takes me.</p>
-        <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
-        <p> <a href="http://localhost:8502" class="custom-link"> • Mortgage Calculator Repayment Web App</a></p>
-        <p> <a href="https://github.com/peterjps/Multi-AI-Agents" class="custom-link"> • Multi-AI Agent System - Financial Analysis </a></p>
-        <p> <a href="https://peterjps.github.io/Peter.ai/" class="custom-link"> • Github WebPage </a></p>
-      </section>
+      
+            <h1 id="about" class="{% if theme == 'light' %}light-theme{% else %}dark-theme{% endif %}">About</h1>
+            <p>Hey there, I'm an adaptable project manager who's diving headfirst into the world of software engineering and machine learning. I've got a knack for optimizing processes and leading strategic initiatives, and I'm excited to bring my strong analytical skills to tech-driven environments. I'm all about continuous learning and can't wait to see where this journey takes me.</p>
+            <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
+            <p> <a href="http://localhost:8502" class="custom-link"> • Mortgage Calculator Repayment Web App</a></p>
+            <p> <a href="https://github.com/peterjps/Multi-AI-Agents" class="custom-link"> • Multi-AI Agent System - Financial Analysis </a></p>
+            <p> <a href="https://peterjps.github.io/Peter.ai/" class="custom-link"> • Github WebPage </a></p>
+        </section>
     
 
       </section>
@@ -100,46 +113,46 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
-      const toggleButton = document.getElementById('theme-toggle');
-      const lightIcon = document.getElementById('light-icon');
-      const darkIcon = document.getElementById('dark-icon');
-      const lightIcon1 = document.getElementById('light-linkedin');
-      const darkIcon1 = document.getElementById('dark-linkedin');
-      const lightIcon2 = document.getElementById('light-email');
-      const darkIcon2 = document.getElementById('dark-email');
-      const lightIcon3 = document.getElementById('light-github');
-      const darkIcon3 = document.getElementById('dark-github');
-      const lightIcon4 = document.getElementById('light-discord');
-      const darkIcon4 = document.getElementById('dark-discord');
-      const headings = document.querySelectorAll('h1, h2'); // Select all h1 and h2 elements
-      const links = document.querySelectorAll('.custom-link'); // Select all links with the custom-link class
+        const toggleButton = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('light-icon');
+        const darkIcon = document.getElementById('dark-icon');
+        const lightIcon1 = document.getElementById('light-linkedin');
+        const darkIcon1 = document.getElementById('dark-linkedin');
+        const lightIcon2 = document.getElementById('light-email');
+        const darkIcon2 = document.getElementById('dark-email');
+        const lightIcon3 = document.getElementById('light-github');
+        const darkIcon3 = document.getElementById('dark-github');
+        const lightIcon4 = document.getElementById('light-discord');
+        const darkIcon4 = document.getElementById('dark-discord');
+        const headings = document.querySelectorAll('h1, h2'); // Select all h1 and h2 elements
+        const links = document.querySelectorAll('.custom-link'); // Select all links with the custom-link class
 
 
       
-      function updateIcons(theme) {
-        if (theme === 'light') {
-          lightIcon.style.display = 'none';
-          darkIcon.style.display = 'inline';
-          // Show light mode icons, hide dark mode icons
-          lightIcon1.style.display = 'inline';
-          darkIcon1.style.display = 'none';
-          lightIcon2.style.display = 'inline';
-          darkIcon2.style.display = 'none';
-          lightIcon3.style.display = 'inline';
-          darkIcon3.style.display = 'none';
-          lightIcon4.style.display = 'inline';
-          darkIcon4.style.display = 'none';
-          headings.forEach(heading => heading.style.color = '#000');
-          links.forEach(link => {
-                link.style.color = 'black'; // Link color for light mode
-                link.addEventListener('mouseenter', () => {
-                    link.style.color = 'darkgray'; // Hover color for light mode
-                });
-                link.addEventListener('mouseleave', () => {
-                    link.style.color = 'black'; // Link color for light mode
-                });
-          });
-          
+        function updateIcons(theme) {
+          if (theme === 'light') {
+            lightIcon.style.display = 'none';
+            darkIcon.style.display = 'inline';
+            // Show light mode icons, hide dark mode icons
+            lightIcon1.style.display = 'inline';
+            darkIcon1.style.display = 'none';
+            lightIcon2.style.display = 'inline';
+            darkIcon2.style.display = 'none';
+            lightIcon3.style.display = 'inline';
+            darkIcon3.style.display = 'none';
+            lightIcon4.style.display = 'inline';
+            darkIcon4.style.display = 'none';
+            headings.forEach(heading => heading.style.color = '#000');
+            links.forEach(link => {
+                  link.style.color = 'black'; // Link color for light mode
+                  link.addEventListener('mouseenter', () => {
+                      link.style.color = 'darkgray'; // Hover color for light mode
+                  });
+                  link.addEventListener('mouseleave', () => {
+                      link.style.color = 'black'; // Link color for light mode
+                  });
+            });
+            
 
           if (theme === 'light') {
     // ... existing light mode icon logic
@@ -199,5 +212,5 @@
 // <!--         {% if site.github.is_project_page %}
 //         <p>Copyright by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
 //         {% endif %} -->
-      </footer>
+      <footer>
 
