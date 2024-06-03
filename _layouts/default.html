@@ -19,13 +19,21 @@
         .custom-link {
             text-decoration: underline;
         }
+        .light-theme {
+            color: black;
+            background-color: white;
+        }
+        .dark-theme {
+            color: white;
+            background-color: black;
+        }
     </style>
 </head>
 <body style='margin-left: 500px !important;'>
     
     <div class="wrapper1">
       <header>
-        <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}">
+        <h1 class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">
           {{ site.title | default: site.github.repository_name }}
         </h1>
 
@@ -107,93 +115,56 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
-      const toggleButton = document.getElementById('theme-toggle');
-      const lightIcons = [
-          document.getElementById('light-icon');
-          document.getElementById('light-linkedin');
-          document.getElementById('light-github');
-          document.getElementById('light-discord');
+        const toggleButton = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('light-icon');
+        const darkIcon = document.getElementById('dark-icon');
+        const lightIcons = [
+            document.getElementById('light-linkedin'),
+            document.getElementById('light-email'),
+            document.getElementById('light-github'),
+            document.getElementById('light-discord')
         ];
-      const darkIcons = [
-          document.getElementById('dark-icon');
-          document.getElementById('dark-linkedin');
-          document.getElementById('dark-email');
-          document.getElementById('dark-github');
-          document.getElementById('dark-discord');
+        const darkIcons = [
+            document.getElementById('dark-linkedin'),
+            document.getElementById('dark-email'),
+            document.getElementById('dark-github'),
+            document.getElementById('dark-discord')
         ];
-      // const lightIcon1 = document.getElementById('light-linkedin');
-      // const darkIcon1 = document.getElementById('dark-linkedin');
-      // const lightIcon2 = document.getElementById('light-email');
-      // const darkIcon2 = document.getElementById('dark-email');
-      // const lightIcon3 = document.getElementById('light-github');
-      // const darkIcon3 = document.getElementById('dark-github');
-      // const lightIcon4 = document.getElementById('light-discord');
-      // const darkIcon4 = document.getElementById('dark-discord');
-      const headings = document.querySelectorAll('h1, h2'); // Select all h1 and h2 elements
-      const links = document.querySelectorAll('.custom-link'); // Select all links with the custom-link class
+        const headings = document.querySelectorAll('h1, h2');
+        const links = document.querySelectorAll('.custom-link');
 
-
-      
-      function updateIcons(theme) {
-        if (theme === 'light') {
-          lightIcons.style.display = 'none';
-          darkIcons.style.display = 'inline';
-          // Show light mode icons, hide dark mode icons
-          // lightIcon1.style.display = 'inline';
-          // darkIcon1.style.display = 'none';
-          // lightIcon2.style.display = 'inline';
-          // darkIcon2.style.display = 'none';
-          // lightIcon3.style.display = 'inline';
-          // darkIcon3.style.display = 'none';
-          // lightIcon4.style.display = 'inline';
-          // darkIcon4.style.display = 'none';
-          headings.forEach(heading => heading.style.color = '#000');
-          links.forEach(link => {
-                link.style.color = 'black'; // Link color for light mode
-                link.addEventListener('mouseenter', () => {
-                    link.style.color = 'darkgray'; // Hover color for light mode
+        function updateIcons(theme) {
+            if (theme === 'light') {
+                lightIcon.style.display = 'none';
+                darkIcon.style.display = 'inline';
+                lightIcons.forEach(icon => icon.style.display = 'inline');
+                darkIcons.forEach(icon => icon.style.display = 'none');
+                document.body.classList.remove('dark-theme');
+                document.body.classList.add('light-theme');
+                headings.forEach(heading => heading.classList.remove('dark-theme'));
+                headings.forEach(heading => heading.classList.add('light-theme'));
+                links.forEach(link => {
+                    link.style.color = 'black';
+                    link.addEventListener('mouseenter', () => link.style.color = 'darkgray');
+                    link.addEventListener('mouseleave', () => link.style.color = 'black');
                 });
-                link.addEventListener('mouseleave', () => {
-                    link.style.color = 'black'; // Link color for light mode
+            } else {
+                lightIcon.style.display = 'inline';
+                darkIcon.style.display = 'none';
+                lightIcons.forEach(icon => icon.style.display = 'none');
+                darkIcons.forEach(icon => icon.style.display = 'inline');
+                document.body.classList.remove('light-theme');
+                document.body.classList.add('dark-theme');
+                headings.forEach(heading => heading.classList.remove('light-theme'));
+                headings.forEach(heading => heading.classList.add('dark-theme'));
+                links.forEach(link => {
+                    link.style.color = 'lightgray';
+                    link.addEventListener('mouseenter', () => link.style.color = 'white');
+                    link.addEventListener('mouseleave', () => link.style.color = 'lightgray');
                 });
-          });
-          
-
-          if (theme === 'light') {
-    // ... existing light mode icon logic
-    document.querySelectorAll('.light-text').forEach(element => {
-        element.style.color = '#000';  /* Replace with your desired color */
-    });
-}
-          
-          // ... repeat for all icons
-        } else {
-          lightIcons.style.display = 'inline';
-          darkIcons.style.display = 'none';
-          // Show dark mode icons, hide light mode icons
-          // lightIcon1.style.display = 'none';
-          // darkIcon1.style.display = 'inline';
-          // lightIcon2.style.display = 'none';
-          // darkIcon2.style.display = 'inline';
-          // lightIcon3.style.display = 'none';
-          // darkIcon3.style.display = 'inline';
-          // lightIcon4.style.display = 'none';
-          // darkIcon4.style.display = 'inline';
-          headings.forEach(heading => heading.style.color = '#f3f4f6');
-          
-          links.forEach(link => {
-              link.style.color = 'lightgray'; // Link color for dark mode
-              link.addEventListener('mouseenter', () => {
-                  link.style.color = 'white'; // Hover color for dark mode
-              });
-              link.addEventListener('mouseleave', () => {
-                  link.style.color = 'lightgray'; // Link color for dark mode
-              });
-          });
-          
-          // ... repeat for all icons
+            }
         }
-      }
+
 
       function getCurrentTheme() {
             return document.documentElement.getAttribute('data-theme');
