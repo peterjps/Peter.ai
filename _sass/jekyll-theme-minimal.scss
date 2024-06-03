@@ -2,13 +2,46 @@
 @import "rouge-github";
 
 body {
-  background-color: #fff;
-  padding:50px;
-  font: 16px/1.5 "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#727272;
-  font-weight:400;
-  margin: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+    overflow: hidden; /* Prevent scrolling issues */
 }
+
+.wrapper1 {
+    max-width: 600px; /* Adjust max-width as needed */
+    text-align: center; /* Center content */
+    padding: 20px; /* Add padding */
+    margin: auto; /* Center the wrapper */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative; /* Make the header stay in place */
+    top: 0;
+}
+
+.profile-picture {
+    margin: 0 auto; /* Center the profile picture */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center social icons */
+    margin-top: 10px;
+}
+
+.theme-toggle {
+    margin-left: auto; /* Push the toggle button to the right */
+    margin-right: 20px; /* Add some spacing from the right */
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
