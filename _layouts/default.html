@@ -53,8 +53,10 @@
 
         {% if site.logo %}
         <button id="theme-toggle" style="right: 600px !important;">
+         <div id="icon-container">
           <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
           <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
+         </div> 
         </button>
         <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px !important; margin-bottom: 8px !important;" />
         {% endif %}
