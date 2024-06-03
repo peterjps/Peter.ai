@@ -1,3 +1,3 @@
-# Updated GitHub Pages (Thanks Jykell - The Minimal Theme)
+# GitHub Page Updated (Thanks Jykell - The Minimal Theme)
 
 
