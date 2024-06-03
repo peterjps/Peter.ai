@@ -43,16 +43,18 @@
     </style>
 </head>
 <body class="light-theme" 
-    style='margin-left: 500px !important;'>
+    style='margin-left: 0px !important;'>
     
     <div class="wrapper1">
-      <header>
-        <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}">
+      <header style="margin-bottom: 0px !important; margin-top: -100px !important;">_</header>
+        <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }} "style="margin-bottom: 35px !important;">
+          Pedro Perez
+        </h1>>
           {{ site.title | default: site.github.repository_name }}
         </h1>
 
         {% if site.logo %}
-        <button id="theme-toggle">
+        <button id="theme-toggle" style="right: 600px !important;">
           <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
           <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
         </button>
@@ -63,7 +65,7 @@
 
 <!--         <p>{{ site.description | default: site.github.project_tagline }}</p>
  -->    
-        <div class="social-icons">
+        <div class="social-icons" style="width: 560px !important; height: 30px !important;"></div>
           <a href="https://www.linkedin.com/in/cspeterai/">
           <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important;">
           <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px !important; margin-left: 0px !important; display:none;">
@@ -103,14 +105,14 @@
       </header>
       <section style="bottom: auto !important;
         margin-bottom: auto !important;
-        margin-top: 270px !important;
+        margin-top: 0px !important;
         right: auto !important;
-        margin-right: 300px !important;" 
+        margin-right: 0px !important;" 
       
       </section>
-        <h1 id="about" class="{% if theme == 'light' %}light-theme{% else %}dark-theme{% endif %}">About</h1>
+        <h1 id="about" class="{% if theme == 'light' %}light-theme{% else %}dark-theme{% endif %}" style="margin-left: 240px !important; margin-bottom: 30px !important;">About</h1>
         <p>Hey there, I'm an adaptable project manager who's diving headfirst into the world of software engineering and machine learning. I've got a knack for optimizing processes and leading strategic initiatives, and I'm excited to bring my strong analytical skills to tech-driven environments. I'm all about continuous learning and can't wait to see where this journey takes me.</p>
-        <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}">Portfolio</h2>
+        <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}"style="margin-left: 230px !important; margin-bottom: 30px !important;">Portfolio</h2>
         <p> <a href="http://localhost:8502" class="custom-link"> • Mortgage Calculator Repayment Web App</a></p>
         <p> <a href="https://github.com/peterjps/Multi-AI-Agents" class="custom-link"> • Multi-AI Agent System - Financial Analysis </a></p>
         <p> <a href="https://peterjps.github.io/Peter.ai/" class="custom-link"> • Github WebPage </a></p>
