@@ -124,9 +124,15 @@ kbd {
 }
 
 header {
-  width:270px;
-  float:left;
-  -webkit-font-smoothing:subpixel-antialiased;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure full viewport height */
+  // width:270px;
+  // float:left;
+  // -webkit-font-smoothing:subpixel-antialiased;
 }
 
 ul.downloads {
