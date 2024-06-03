@@ -1,14 +1,16 @@
-.profile-picture {
-  width: 150px; /* Adjust size as needed */
-  height: 150px; /* Adjust size as needed */
-  border-radius: 50%;
-  object-fit: cover;
-  backdrop-filter: blur(6px);
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 50px; /* Adjust the padding around the body content */
+  font: 16px/1.5 "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #727272;
+  font-weight: 400;
+  margin: 0; /* Remove auto margin */
 }
 
 .wrapper1 {
   max-width: 800px; /* Adjust the max-width to your preference */
-  margin: 0 auto; /* This centers the wrapper horizontally */
+  margin: 0 auto; /* Center the wrapper horizontally */
   padding: 0 20px; /* Optional: Add padding to the sides for spacing */
 }
 
@@ -17,43 +19,12 @@
   margin: 0 auto; /* Center the container horizontally */
 }
 
-#about {
-  font-size: 24px; /* Change this to your desired font size */
-  font-weight: bold; /* Optional: change the font weight */
-}
-
-.social-icons {
-    display: inline-block;
-    width: 200px;
-}
-/*     width: 30px;  height: 30px;  margin-right: 10px; 
-} */
-
-/* styles.css */
-
-/* Default (Light Mode) */
-:root {
-  --background-color: #ffffff;
-  --text-color: #000000;
-}
-
-/* Dark Mode */
-[data-theme="dark"] {
-  --background-color: #191919;
-  --text-color: #f3f4f6;
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
 #theme-toggle {
   position: fixed;
   top: 1rem; /* Adjust vertical position as needed */
-  right: 1rem;
+  right: 1rem; /* Adjust horizontal position */
   z-index: 1000;
-  padding: 0.25rem; /* Adjust padding to make button smaller */
+  padding: 0.25rem; /* Adjust padding to make the button smaller */
   background-color: transparent; /* Make background transparent */
   border: none;
   cursor: pointer;
@@ -70,99 +41,85 @@ body {
 }
 
 .header {
-    display: flex;
-    justify-content: center;  /* Centers elements horizontally */ 
-    align-items: center;  /* Aligns elements vertically (already present) */
+  display: flex;
+  justify-content: center;  /* Centers elements horizontally */ 
+  align-items: center;  /* Aligns elements vertically (already present) */
 }
-
 
 .light-theme {
   color: #00000; /* Your desired color for light theme */
 }
 
 .light-theme .custom-link:hover {
-    color: lightgray; /* Link color on hover */
+  color: lightgray; /* Link color on hover */
 }
-
 
 .dark-theme {
   color: #3f4f6; /* Your desired color for dark theme */
 }
 
 /* Default light mode colors */
-/* Default light mode colors */
 :root {
-    --link-color: black; /* Default link color for light mode */
-    --link-hover-color: darkgray; /* Default hover color for light mode */
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --link-color: black; /* Default link color for light mode */
+  --link-hover-color: darkgray; /* Default hover color for light mode */
 }
 
-/* Dark mode colors using prefers-color-scheme media query */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --link-color: lightgray; /* Link color for dark mode */
-        --link-hover-color: white; /* Hover color for dark mode */
-    }
-}
-
-/* Light mode colors using custom media query */
-@media (light-theme) {
-    :root {
-        --link-color: black; /* Link color for light mode */
-        --link-hover-color: darkgray; /* Hover color for light mode */
-    }
+/* Dark Mode */
+[data-theme="dark"] {
+  --background-color: #191919;
+  --text-color: #f3f4f6;
+  --link-color: lightgray; /* Link color for dark mode */
+  --link-hover-color: white; /* Hover color for dark mode */
 }
 
 .custom-link {
-    color: var(--link-color); /* Use CSS variable for link color */
-    text-decoration: none;
+  color: var(--link-color); /* Use CSS variable for link color */
+  text-decoration: none;
 }
 
 .custom-link:hover {
-    color: var(--link-hover-color); /* Use CSS variable for hover color */
+  color: var(--link-hover-color); /* Use CSS variable for hover color */
 }
 
 .underscore::before {
-    content: '_ ';
+  content: '_ ';
 }
 
 body.light-theme {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 body.dark-theme {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 h1.light-theme, h2.light-theme {
-    color: black;
+  color: black;
 }
 
 h1.dark-theme, h2.dark-theme {
-    color: white;
+  color: white;
 }
 
 a.custom-link {
-    color: black;
-    text-decoration: underline;
+  color: black;
+  text-decoration: underline;
 }
 
 body.dark-theme a.custom-link {
-    color: lightgray;
+  color: lightgray;
 }
 
 body.dark-theme a.custom-link:hover {
-    color: white;
+  color: white;
 }
 
 body.light-theme a.custom-link:hover {
-    color: darkgray;
-}
-
-
-body {
-  padding: 50px; /* Adjust the padding around the body content */
+  color: darkgray;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -179,4 +136,22 @@ blockquote {
 
 footer {
   margin-top: 20px; /* Adjust the margin above the footer */
+}
+
+.profile-picture {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  border-radius: 50%;
+  object-fit: cover;
+  backdrop-filter: blur(6px);
+}
+
+#about {
+  font-size: 24px; /* Change this to your desired font size */
+  font-weight: bold; /* Optional: change the font weight */
+}
+
+.social-icons {
+  display: inline-block;
+  width: 200px;
 }
