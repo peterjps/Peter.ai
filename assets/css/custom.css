@@ -19,7 +19,7 @@ body {
   margin: 0 auto; /* Center the container horizontally */
 }
 
-#theme-toggle {
+.theme-toggle {
   position: fixed;
   top: 1rem; /* Adjust vertical position as needed */
   right: 1rem; /* Adjust horizontal position */
@@ -30,13 +30,13 @@ body {
   cursor: pointer;
 }
 
-#theme-toggle img {
+.theme-toggle img {
   width: 24px; /* Adjust icon size */
   height: 24px;
 }
 
 /* Optional: Add hover effect to indicate interaction */
-#theme-toggle:hover {
+.theme-toggle:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Example background color on hover */
 }
 
