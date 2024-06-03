@@ -6,24 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
-    {% include head-custom.html %}
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            min-height: 100vh; /* Ensure full viewport height */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .wrapper1 {
-            max-width: 600px; /* Adjust max-width as needed */
-            text-align: center; /* Center content */
-            padding: 20px; /* Add padding */
+            max-width: 600px;
+            text-align: center;
+            padding: 20px;
         }
         .custom-link {
             text-decoration: underline;
@@ -38,26 +34,22 @@
         }
         #theme-toggle {
             position: fixed;
-            top: 25%; /* Adjust vertical position as needed */
-            right: 1rem; /* Adjust horizontal position as needed */
+            top: 20px; /* Adjust top position as needed */
+            right: 20px; /* Adjust right position as needed */
             z-index: 1000;
-            padding: 0.25rem; /* Adjust padding to make button smaller */
-            background-color: transparent; /* Make background transparent */
+            background-color: transparent;
             border: none;
             cursor: pointer;
         }
         #theme-toggle img {
-            width: 24px; /* Adjust icon size */
+            width: 24px;
             height: 24px;
-        }
-        #theme-toggle:hover {
-            background-color: rgba(0, 0, 0, 0.1); /* Example background color on hover */
         }
     </style>
 </head>
 <body class="light-theme">
     <div class="wrapper1">
-        <header style="margin-bottom: 0px; margin-top: -100px;">
+        <header style="margin-bottom: 0; margin-top: -100px;">
             <h1 class="{{ data-theme === 'light' ? 'light-theme' : 'dark-theme' }}" style="margin-bottom: 35px;">
                 {{ site.title | default: site.github.repository_name }}
             </h1>
@@ -66,33 +58,34 @@
                 <img src="{{ '/assets/img/light-mode.png' | relative_url }}" id="light-icon" style="display: none;" alt="Light Mode Icon">
                 <img src="{{ '/assets/img/night-mode.png' | relative_url }}" id="dark-icon" alt="Dark Mode Icon">
             </button>
-            <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-picture" style="margin-top: 0px; margin-bottom: 8px;">
+            <img src="{{ site.logo | relative_url }}" alt="Logo" class="profile-picture" style="margin-top: 0; margin-bottom: 8px;">
             {% endif %}
-            <div class="social-icons" style="width: 560px; height: 30px;"></div>
-            <a href="https://www.linkedin.com/in/cspeterai/">
-                <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px; margin-left: 0;">
-                <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px; margin-left: 0; display:none;">
-            </a>
-            <a href="mailto:cspeteai@outlook.com">
-                <img id="light-email" src="assets/img/email_dark.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px;">
-                <img id="dark-email" src="assets/img/email_white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px; display:none;">
-            </a>
-            <a href="https://github.com/peterjps">
-                <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px;">
-                <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="margin-right: 7.5px; margin-left: 0; display: none;">
-            </a>
-            <a href="https://discordapp.com/users/@01_peter_">
-                <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0;">
-                <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0;display:none;">
-            </a>
+            <div class="social-icons" style="width: 560px; height: 30px;">
+                <a href="https://www.linkedin.com/in/cspeterai/">
+                    <img id="light-linkedin" src="assets/img/linkedin-black.png" alt="LinkedIn profile" width="30" height="30" style="margin-right: 7.5px;">
+                    <img id="dark-linkedin" src="assets/img/linkedin-white.png" alt="LinkedIn profile (dark mode)" width="30" height="30" style="margin-right: 7.5px; display: none;">
+                </a>
+                <a href="mailto:cspeteai@outlook.com">
+                    <img id="light-email" src="assets/img/email_dark.png" alt="Email me" width="30" height="30" style="margin-right: 7.5px;">
+                    <img id="dark-email" src="assets/img/email_white.png" alt="Email me (dark mode)" width="30" height="30" style="margin-right: 7.5px; display: none;">
+                </a>
+                <a href="https://github.com/peterjps">
+                    <img id="light-github" src="assets/img/github-mark.png" alt="Github me" width="30" height="30" style="margin-right: 7.5px;">
+                    <img id="dark-github" src="assets/img/github-mark-white.png" alt="Github me (dark mode)" width="30" height="30" style="margin-right: 7.5px; display: none;">
+                </a>
+                <a href="https://discordapp.com/users/@01_peter_">
+                    <img id="light-discord" src="assets/img/icon_clyde_black_RGB.png" alt="Discord me" width="30" height="30" style="margin-right: 0;">
+                    <img id="dark-discord" src="assets/img/icon_clyde_white_RGB.png" alt="Discord me (dark mode)" width="30" height="30" style="margin-right: 0; display: none;">
+                </a>
+            </div>
         </header>
-        <section style="bottom: auto; margin-bottom: auto; margin-top: 0; right: auto; margin-right: 0;">
+        <section style="margin-bottom: auto; margin-top: 0;">
             <h1 id="about" class="{% if theme == 'light' %}light-theme{% else %}dark-theme{% endif %}" style="margin-left: 240px; margin-bottom: 30px;">About</h1>
             <p>Hey there, I'm an adaptable project manager who's diving headfirst into the world of software engineering and machine learning. I've got a knack for optimizing processes and leading strategic initiatives, and I'm excited to bring my strong analytical skills to tech-driven environments. I'm all about continuous learning and can't wait to see where this journey takes me.</p>
             <h2 id="projects" class="{{ theme === 'light' ? 'light-theme' : 'dark-theme' }}" style="margin-left: 230px; margin-bottom: 30px;">Portfolio</h2>
-            <p> <a href="http://localhost:8502" class="custom-link"> • Mortgage Calculator Repayment Web App</a></p>
-            <p> <a href="https://github.com/peterjps/Multi-AI-Agents" class="custom-link"> • Multi-AI Agent System - Financial Analysis </a></p>
-            <p> <a href="https://peterjps.github.io/Peter.ai/" class="custom-link"> • Github WebPage </a></p>
+            <p><a href="http://localhost:8502" class="custom-link">• Mortgage Calculator Repayment Web App</a></p>
+            <p><a href="https://github.com/peterjps/Multi-AI-Agents" class="custom-link">• Multi-AI Agent System - Financial Analysis</a></p>
+            <p><a href="https://peterjps.github.io/Peter.ai/" class="custom-link">• Github WebPage</a></p>
         </section>
         <footer>
             <!-- Your footer content here -->
@@ -172,7 +165,6 @@
     </script>
 </body>
 </html>
-
 
 
 
