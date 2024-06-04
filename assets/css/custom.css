@@ -22,7 +22,6 @@ body {
 #theme-toggle {
   position: fixed;
   top: 25%; /* Adjust vertical position as needed */
-  left: 550px;
   right: 1rem; /* Adjust horizontal position */
   z-index: 1000;
   padding: 0.25rem; /* Adjust padding to make the button smaller */
