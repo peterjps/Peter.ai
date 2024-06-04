@@ -69,7 +69,7 @@ body {
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --background-color: #343434;
+  --background-color: #FCFCFC;
   --text-color: #f3f4f6;
   --link-color: lightgray; /* Link color for dark mode */
   --link-hover-color: white; /* Hover color for dark mode */
