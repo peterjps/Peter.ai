@@ -38,6 +38,9 @@ body {
 /* Optional: Add hover effect to indicate interaction */
 #theme-toggle:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Example background color on hover */
+  border-radius: 50%; /* Add border-radius to match the button's shape */
+}
+
 }
 
 
