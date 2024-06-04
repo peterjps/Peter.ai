@@ -22,6 +22,7 @@ body {
 #theme-toggle {
   position: fixed;
   top: 25%; /* Adjust vertical position as needed */
+  left: 550px;
   right: 1rem; /* Adjust horizontal position */
   z-index: 1000;
   padding: 0.25rem; /* Adjust padding to make the button smaller */
@@ -38,7 +39,6 @@ body {
 /* Optional: Add hover effect to indicate interaction */
 #theme-toggle:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Example background color on hover */
-  border-radius: 50%; /* Add border-radius to match the button's shape */
 }
 
 }
